@@ -16,7 +16,7 @@
         var thumbnail = $(this).find("a"),
             mainImage = $(this).siblings().find(options.mainImage);
 
-        $(".main-image").children(".caption").show().innerWidth(mainImage.innerWidth() - 1);
+        $(".main-image").children(".caption").show().innerWidth(mainImage.innerWidth());
 
         thumbnail.on("click", function (e) {
           e.preventDefault();
@@ -26,7 +26,7 @@
           $(".main-image").find(".caption").remove();
 
           var galleryCaption = $(this).parent().children(".caption").clone().show();
-          galleryCaption.innerWidth(mainImage.innerWidth() - 1);
+          galleryCaption.innerWidth(mainImage.innerWidth());
           mainImage.after(galleryCaption);
 
         });
