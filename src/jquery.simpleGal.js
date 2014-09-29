@@ -1,5 +1,5 @@
 (function($){
-
+  
   $.fn.extend({
 
     simpleGal: function (options) {
@@ -16,7 +16,7 @@
         var thumbnail = $(this).find("a"),
             mainImage = $(this).siblings().find(options.mainImage);
 
-        $(".main-image").children(".caption").show().innerWidth(mainImage.innerWidth() - 1);
+        $(".main-image").children(".caption").show();
 
         thumbnail.on("click", function (e) {
           e.preventDefault();
@@ -26,13 +26,13 @@
           $(".main-image").find(".caption").remove();
 
           var galleryCaption = $(this).parent().children(".caption").clone().show();
-          galleryCaption.innerWidth(mainImage.innerWidth() - 1);
+          galleryCaption.width(mainImage.innerWidth() - 1);
           mainImage.after(galleryCaption);
 
         });
-
+        
       });
-
+      
     }
 
   });
